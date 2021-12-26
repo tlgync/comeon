@@ -1,25 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useContext } from 'react';
+import { BrowserRouter as Router, Switch, Route, withRouter } from 'react-router-dom';
+import { AuthContext } from './context/AuthContext';
+import { HomePage } from './views/HomePage';
+import { Login } from './views/Login/Login';
+import { Play } from './views/Play';
 
 function App() {
+  const { isAuth } = useContext(AuthContext);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    isAuth ? (
+      <Router>
+        <Switch>
+          <Route exact path="/login" component={withRouter(Login)} />
+          <Route exact path="/" component={withRouter(HomePage)} />
+          <Route exact path="/play/:game" component={withRouter(Play)} />
+        </Switch>
+      </Router>
+    ) : <Login />
+
   );
 }
 
