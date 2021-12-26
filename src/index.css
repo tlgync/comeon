@@ -11,3 +11,48 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+body {
+  background-color: #444;
+}
+.main.container {
+  background-color: #FFFFFF;
+  margin: 0 auto;
+  padding: 2em 2em 7em;
+  max-width: 990px;
+}
+
+.centerGame{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  .flexCenter{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .inputSmall{
+    width: 130px !important;
+  }
+
+  .smallImage{
+    width: 300px !important;
+    height: 300px !important;
+  }
+}
+
+.field {
+  margin: 10px;
+}
+
+.search {
+  float: right;
+}
