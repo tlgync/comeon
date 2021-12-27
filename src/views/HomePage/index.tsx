@@ -1,9 +1,7 @@
 import { useContext } from 'react';
-import { Header } from '../../components/Header';
-import { Loader } from '../../components/Loader';
-import { Logo } from '../../components/Logo';
-import { GameContext } from '../../context/GameContext';
-import { GameList } from '../Game';
+import { GameList } from '..';
+import { Header, Loader, Logo } from '../../components';
+import { GameContext } from '../../context';
 
 export const HomePage = () => {
   const { isLoader } = useContext(GameContext);
