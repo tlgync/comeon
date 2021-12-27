@@ -2,9 +2,9 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable no-console */
 import { useContext } from 'react';
-import { GameContext } from '../../context/GameContext';
-import { useWindowSize } from '../../hooks/useWindowSize';
-import { ICategories } from '../../types/game';
+import { GameContext } from '../context';
+import { useWindowSize } from '../hooks/useWindowSize';
+import { ICategories } from '../types/game';
 
 export const Categories = () => {
   const { categories, gamesClone, setGames } = useContext(GameContext);

@@ -2,9 +2,8 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useContext, useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { Loader } from '../../components/Loader';
-import { AuthContext } from '../../context/AuthContext';
-import { GameContext } from '../../context/GameContext';
+import { Loader } from '../../components';
+import { AuthContext, GameContext } from '../../context';
 import { Service } from '../../services';
 
 type Inputs = {
@@ -36,13 +35,20 @@ export const Login = () => {
 
   return (
     <div className="centerGame">
-      <div className="main container">
+      <div className="loginContainer">
         {isLoader
           ? (
             <Loader />
           )
           : (
             <div className="login">
+              <div className="logoContainer">
+                <div className="ui one page center aligned grid">
+                  <div className="twelve wide column">
+                    <img src="images/logo.svg" alt="logo" />
+                  </div>
+                </div>
+              </div>
               <div className="ui grid centered">
                 <form>
                   {error && (
@@ -74,7 +80,6 @@ export const Login = () => {
                         <i
                           onClick={() => {
                             setShowPassword(!showPassword);
-                            console.log('object');
                           }}
                           className={!showPassword ? 'lock icon' : 'lock open icon'}
                           style={{ zIndex: 99999, cursor: 'pointer' }}
@@ -90,16 +95,17 @@ export const Login = () => {
                       </div>
                       )}
                     </div>
-                    <div className="ui toggle checkbox">
-                      <input type="checkbox" name="public" checked={showPassword} onChange={() => setShowPassword(!showPassword)} />
-                      <label>Show password</label>
-                    </div>
-                    <div className="field">
-                      <div className="ui icon input">
-                        <input style={{ cursor: 'pointer' }} type="button" value="Login" onClick={handleSubmit(data => onLogin(data))} />
-                        <i className="right chevron icon" />
+                    <div className="required field">
+                      <div className="ui checkbox">
+                        <input type="checkbox" name="public" checked={showPassword} onChange={() => setShowPassword(!showPassword)} />
+                        <label style={{ textAlign: 'left' }}>Show password</label>
                       </div>
                     </div>
+                    <div className="ui hidden divider" />
+                    <button type="button" onClick={handleSubmit(data => onLogin(data))} className="play ui  secondary button inverted">
+                      Login
+                      <i className="right chevron icon" />
+                    </button>
                   </div>
                 </form>
               </div>

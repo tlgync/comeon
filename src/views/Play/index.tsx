@@ -1,10 +1,10 @@
 /* eslint-disable no-return-assign */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable no-unused-vars */
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-/* eslint-disable no-unused-vars */
 declare global {
     interface Window {
       comeon?: any;
