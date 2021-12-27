@@ -1,14 +1,13 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import { ChangeEvent, useContext } from 'react';
-import { AuthContext } from '../../context/AuthContext';
-import { GameContext } from '../../context/GameContext';
-import { useWindowSize } from '../../hooks/useWindowSize';
-import { Service } from '../../services';
+import { AuthContext, GameContext } from '../context';
+import { useWindowSize } from '../hooks/useWindowSize';
+import { Service } from '../services';
 
 export const Header = () => {
   const { user, setIsAuth } = useContext(AuthContext);
-  const { setGames, gamesClone } = useContext(GameContext);
+  const { setGames, gamesClone, setIsLoader } = useContext(GameContext);
   const { avatar, name, event } = user;
   const size = useWindowSize();
 
@@ -38,11 +37,14 @@ export const Header = () => {
           </div>
           <div
             onClick={() => {
+              setIsLoader(true);
               Service.User.Logout({ username }).then(res => {
                 if (res && res.status === 'success') {
+                  setIsLoader(false);
                   localStorage.removeItem('user');
                   setIsAuth(false);
                 }
+                setIsLoader(false);
               });
             }}
             className={`logout ui ${size.width && size.width < 600 ? 'right' : 'left'} six wide column  secondary button inverted`}

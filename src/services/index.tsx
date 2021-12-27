@@ -1,5 +1,3 @@
-/* eslint-disable import/no-cycle */
-
 import { AuthService } from './AuthService';
 import { GameService } from './GameService';
 

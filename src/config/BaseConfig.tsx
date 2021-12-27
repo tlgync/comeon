@@ -13,6 +13,6 @@ export const BaseConfig = {
   },
   utilities: {
     user: () => (JSON.parse(localStorage.getItem('user') || '')),
-    userId: () => (JSON.parse(localStorage.getItem('user') || '').id),
+    username: () => (JSON.parse(localStorage.getItem('username') || '').username),
   },
 };

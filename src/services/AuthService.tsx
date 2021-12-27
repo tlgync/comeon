@@ -7,6 +7,9 @@ const logout = BaseConfig.api.user('/logout');
 
 export const AuthService = {
 
+  /**
+    * [LOGIN]
+    */
   Login(data: IAuth) {
     const requestOptions = {
       method: 'POST',

@@ -22,12 +22,60 @@ body {
   max-width: 990px;
 }
 
+.loginContainer{
+  background-color: #FFFFFF;
+  margin: 0 auto;
+  padding: 7em 2em 7em;
+  width: 450px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  border-radius: 1em;
+}
+
+.logoContainer{
+  width: 100%;
+  background-color: #9B9B9B;
+  margin-bottom: 2em;
+  border-radius: 0.5em;
+}
+
+.customButton:hover{
+  background-color: red;
+}
+
 .centerGame{
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.hoverImage:hover{
+  transition: .5s;
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+div.scrollmenu {
+  background-color: #444444;
+  display: flex;
+  justify-content: center;
+  overflow: auto;
+  white-space: nowrap;
+  width: 100%;
+  margin-top: 1em;
+}
+
+div.scrollmenu a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+  background-color: #777;
 }
 
 
